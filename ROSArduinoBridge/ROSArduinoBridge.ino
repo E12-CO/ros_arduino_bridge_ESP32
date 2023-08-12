@@ -1,5 +1,5 @@
 /*********************************************************************
-    ROSArduinoBridge
+    ROSArduinoBridge for RoboInnovator 2023.
 
     A set of simple serial commands to control a differential drive
     robot and receive back sensor and odometry data. Default
@@ -143,8 +143,8 @@ void runCommand() {
       }
       else moving = 1;
       // Swap the motor
-      leftPID.TargetTicksPerFrame = arg2;
-      rightPID.TargetTicksPerFrame = arg1;
+      leftPID.TargetTicksPerFrame = arg1;
+      rightPID.TargetTicksPerFrame = arg2;
       Serial.println("OK");
       break;
     case MOTOR_RAW_PWM:
@@ -153,10 +153,6 @@ void runCommand() {
       resetPID();
       moving = 0; // Sneaky way to temporarily disable the PID
       setMotorSpeeds(arg1, arg2);
-//      Serial.print("Reply Arg :");
-//      Serial.print(arg1);
-//      Serial.print(",");
-//      Serial.println(arg2);
       Serial.println("OK");
       break;
     default:

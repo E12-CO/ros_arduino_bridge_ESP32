@@ -12,8 +12,9 @@ ESP32Encoder enc0;
 ESP32Encoder enc1;
 
 void initEncoder(){
-  enc0.attachHalfQuad(LEFT_ENC_PIN_A, LEFT_ENC_PIN_B);
-  enc1.attachHalfQuad(RIGHT_ENC_PIN_A, RIGHT_ENC_PIN_B);
+  ESP32Encoder::useInternalWeakPullResistors=UP;
+  enc0.attachFullQuad(LEFT_ENC_PIN_A, LEFT_ENC_PIN_B);
+  enc1.attachFullQuad(RIGHT_ENC_PIN_A, RIGHT_ENC_PIN_B);
   resetEncoders();
 }
 

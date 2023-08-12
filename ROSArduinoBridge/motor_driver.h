@@ -9,10 +9,11 @@
 
 #define PWM_freq 5000
 
-#define RIGHT_MOTOR_BACKWARD 25
-#define LEFT_MOTOR_BACKWARD  13
-#define RIGHT_MOTOR_FORWARD  26
-#define LEFT_MOTOR_FORWARD   27
+#define RIGHT_MOTOR_BACKWARD 33
+#define RIGHT_MOTOR_FORWARD  32
+
+#define LEFT_MOTOR_BACKWARD  25
+#define LEFT_MOTOR_FORWARD   26
 
 void initMotorController();
 void setMotorSpeeds(int leftSpeed, int rightSpeed);
