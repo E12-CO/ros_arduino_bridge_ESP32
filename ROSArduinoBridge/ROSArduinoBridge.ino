@@ -124,9 +124,9 @@ void runCommand() {
       Serial.println("0");
       break;
     case READ_ENCODERS:
-      Serial.print(readEncoder(LEFT));
+      Serial.print(readEncoderL());
       Serial.print(" ");
-      Serial.println(readEncoder(RIGHT));
+      Serial.println(readEncoderR());
       break;
     case RESET_ENCODERS:
       resetEncoders();
@@ -142,7 +142,6 @@ void runCommand() {
         moving = 0;
       }
       else moving = 1;
-      // Swap the motor
       leftPID.TargetTicksPerFrame = arg1;
       rightPID.TargetTicksPerFrame = arg2;
       Serial.println("OK");
