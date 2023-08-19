@@ -33,9 +33,9 @@ SetPointInfo;
 SetPointInfo leftPID, rightPID;
 
 /* PID Parameters */
-int Kp = 3;
-int Kd = 1;
-int Ki = 1;
+int Kp = 2;
+int Kd = 12;
+int Ki = 0;
 int Ko = 50;
 
 unsigned char moving = 0; // is the base in motion?
@@ -88,9 +88,9 @@ void doPID(SetPointInfo * p) {
   output += p->output;
   // Accumulate Integral error *or* Limit output.
   // Stop accumulating when output saturates
-  if (output > MAX_PWM)
+  if (output >= MAX_PWM)
     output = MAX_PWM;
-  else if (output < -MAX_PWM)
+  else if (output <= -MAX_PWM)
     output = -MAX_PWM;
   else
   /*
